@@ -1,10 +1,31 @@
-class UsersControllerController < ApplicationController
-  def meals_controller
+class UsersController < ApplicationController
+  def new
+    cookies.delete("current_user")
+    @user = User.new
   end
 
-  def companies_controller
+  def create
+    @user = User.new(user_params)
+    if @user.valid?
+      @user.save
+      cookies["current_user"] = @user.username
+    else
+      render :new
+    end
   end
 
-  def dietary_restrictions_controller
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :username,
+      :password,
+      :password_confirmation,
+      :first_name,
+      :last_name,
+      :experience,
+      :company_id,
+    )
   end
+
 end
