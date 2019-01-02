@@ -1,0 +1,2 @@
+class MealBooking < ApplicationRecord
+end
