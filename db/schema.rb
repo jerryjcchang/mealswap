@@ -27,8 +27,7 @@ ActiveRecord::Schema.define(version: 2019_01_02_143613) do
 
   create_table "meal_bookings", force: :cascade do |t|
     t.integer "meal_id"
-    t.integer "chef_id"
-    t.integer "booking_id"
+    t.integer "booker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_01_02_143613) do
     t.string "ingredients"
     t.string "description"
     t.string "prep_time"
+    t.integer "chef_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,10 +55,8 @@ ActiveRecord::Schema.define(version: 2019_01_02_143613) do
     t.string "password"
     t.string "first_name"
     t.string "last_name"
-    t.string "company"
     t.string "experience"
-    t.integer "chef_id"
-    t.integer "booking_id"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

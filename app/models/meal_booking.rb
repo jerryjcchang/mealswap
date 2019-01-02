@@ -1,4 +1,4 @@
 class MealBooking < ApplicationRecord
-  belongs_to :user, as: 
-  belongs_to :meals
+  belongs_to :meal
+  belongs_to :booker, class_name: 'User', foreign_key: 'booker_id'
 end
