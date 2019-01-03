@@ -1,4 +1,4 @@
-<h2><%= form_for @meal do |f| %></h2>
+<%= form_for @meal do |f| %>
   <ul>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -14,4 +14,5 @@
     <%= f.select :portion, (1..4) %>
     <%= f.hidden_field :chef_id, value: current_user.id %>
     <%= f.submit submit_text %>
+  </ul>
 <% end %>
