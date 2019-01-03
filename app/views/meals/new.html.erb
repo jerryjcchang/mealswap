@@ -1,3 +1,5 @@
 <h1>Submit a New Meal: </h1>
 
-<%= render "meal_form" %>
+<%= render partial: "shared/error_list", locals: {new_object: @meal} %>
+
+<%= render partial: "form", locals: { submit_text: 'Submit Your Meal' } %>

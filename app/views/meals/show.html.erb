@@ -4,3 +4,10 @@
 <h3> Ingredients: <%= @meal.ingredients %></h3>
 <h3> Decription: <%= @meal.description %></h3>
 <h3> Preparation Time:<%= @meal.prep_time %></h3>
+
+<%= form_tag @meal, method: "DELETE" do %>
+    <%= submit_tag "Delete this snack" %>
+<% end %>
+
+  <%= link_to "Return to Meals Index", meals_path %>
+  <%= link_to "Edit this Meal", edit_meal_path %>
