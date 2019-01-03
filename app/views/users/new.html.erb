@@ -16,7 +16,7 @@
   <%= f.label "Please confirm your password" %>
   <%= f.password_field :password_confirmation %></br></br>
   <%= f.label "Please select your company from the list below" %>
-  <%= f.collection_select(:company_id, Company.all, :id, :name, prompt: "---") %></br></br>
+  <%= f.collection_select(:company_id, Company.sorted, :id, :name, prompt: "---") %></br></br>
   <%= f.label "Cooking Experience (1 being Novice, 5 being Expert)" %>
   <%= f.select :experience, (1..5) %></br></br>
   </br>

@@ -1,8 +1,8 @@
 class Company < ApplicationRecord
   has_many :users
 
-  def sorted
-    order(:name)
+  def self.sorted
+    self.order(:name)
   end
 
 end

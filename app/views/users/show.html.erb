@@ -1,1 +1,7 @@
-<h1>Welcome <%= @user.first_name %>!</h1>
+<h1><%= @user.username %></h1>
+
+<div>
+  <p>Name: <%= @user.full_name %></p>
+  <p><a href="mailto:<%= @user.email %>?subject=MealSwap">Contact</a></p>
+  <p>Company: <%= @user.company_name %></p>
+  <p>Cooking Experience: <%= @user.experience %></p>

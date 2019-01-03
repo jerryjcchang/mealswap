@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: cookies[:current_user])
+    @user = User.find(params[:id])
   end
 
   private
