@@ -26,6 +26,7 @@ class UsersController < ApplicationController
       :username,
       :password,
       :password_confirmation,
+      :email,
       :first_name,
       :last_name,
       :experience,
