@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <div class="header">
+      <% if cookies.has_key? "current_user" %>
+      <% @user = User.find_by(username: cookies[:current_user]) %>
+      <h2>Welcome <%= @user.first_name %></h2>
+      <p class="right"><%= link_to "Log Out", logout_path %></p>
+    <% else %>
+      <p><%= link_to "Login In", login_path %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

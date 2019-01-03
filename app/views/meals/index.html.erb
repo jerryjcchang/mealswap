@@ -1,7 +1,7 @@
 <h1> All Meals: </h1>
 
 <ul>
-  <%= @meals.each do |meal| %>
-  <li> <%= link_to meal.name, meals_path(meal) %></li>
+  <% @meals.each do |meal| %>
+  <li> <%= link_to meal.name, meal %></li>
   <% end %>
 </ul>

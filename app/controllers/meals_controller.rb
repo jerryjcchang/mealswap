@@ -5,11 +5,11 @@ class MealsController < ApplicationController
   end
 
   def show
-    @meal = Meal.find(param[:id])
+    @meal = Meal.find(params[:id])
   end
 
   def create
-    @meal = Meal.find_or_create_by(param[:id])
+    @meal = Meal.find_or_create_by(params[:id])
     @meal.save
     redirect_to @meal
   end
