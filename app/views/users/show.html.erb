@@ -2,6 +2,12 @@
 
 <div>
   <p>Name: <%= @user.full_name %></p>
-  <p><a href="mailto:<%= @user.email %>?subject=MealSwap">Contact</a></p>
+  <p>E-mail: <a href="mailto:<%= @user.email %>?subject=MealSwap"><%= @user.email %></a></p>
   <p>Company: <%= @user.company_name %></p>
   <p>Cooking Experience: <%= @user.experience %></p>
+<h2>Meals Prepared</h2>
+      <% @user.meals.each do |m| %>
+        <p><%= link_to m.name, m %></p>
+      <%end%>
+<h2>Meals Booked</h2>
+</div>

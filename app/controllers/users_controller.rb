@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     cookies.delete("current_user")
     @user = User.new

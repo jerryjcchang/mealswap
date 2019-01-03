@@ -14,6 +14,7 @@ class MealsController < ApplicationController
   end
 
   def create
+    byebug
     @meal = Meal.create(strong_params)
     redirect_to meal_path(@meal)
   end
