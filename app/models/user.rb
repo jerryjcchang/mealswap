@@ -12,4 +12,8 @@ class User < ApplicationRecord
     self.first_name + " " + self.last_name
   end
 
+  def company_name
+    self.company.name
+  end
+
 end
