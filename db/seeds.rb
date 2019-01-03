@@ -12,3 +12,7 @@ Company.create(name: "Global Blockchain Business Council", floor: "9F")
 Company.create(name: "Center for a Secure Free Society", floor: "8F")
 Company.create(name: "Consensys", floor: "9F")
 Company.create(name: "Venture Labs Georgetown", floor: "8F")
+
+Meal.create(name: "Ramen", calories: 900, ingredients: "Broth, Noodles, Soft-Boiled Egg, Negi, Nori", description: "Delicious. Who doesn't like ramen?", prep_time: "1.5 hrs", chef_id: 2)
+Meal.create(name: "Hot BBQ Chicken", calories: 450, ingredients: "Chicken, BBQ", description: "Slow cooked chicken covered in a spicy and sweet BBQ sauce", prep_time: "3 hrs", chef_id: 2)
+Meal.create(name: "Braised Beef Polenta", calories: 800, ingredients: "Beef, Tomatos, Red Wine, Polenta, Butter, Herbs", description: "Beef braised in a red wine tomato sauce for 8 hours, served on a bed of rich and buttery polenta", prep_time: "8+ hrs", chef_id: 2)
