@@ -21,5 +21,5 @@ class MealsController < ApplicationController
   # def destroy
   #
   # end
-  
+
 end

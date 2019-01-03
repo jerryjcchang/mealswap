@@ -1,0 +1,21 @@
+<h1>New Account</h1>
+
+<%= render partial: "shared/error_list", locals: {new_object: @user} %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label "Create a password" %>
+  <%= f.password_field :password %>
+  <%= f.label "Please confirm your password" %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.collection_select(:company_id, Company.all, :id, :name, prompt: "---") %>
+  <%= f.label "Cooking Experience" %>
+  <%= f.select :experience, (1..5) %>
+  <%= f.submit %>
+
+<% end %>
