@@ -5,7 +5,7 @@ class MealsController < ApplicationController
   end
 
   def show
-    @meal = Meal.find(params[:id])
+    @meal = Meal.find_or_create_by(params[:id])
   end
 
   def create
@@ -14,9 +14,9 @@ class MealsController < ApplicationController
     redirect_to @meal
   end
 
-  # def update
-  #
-  # end
+  def update
+    @meal = Meal.find_or_create_by(params[:id])
+  end
   #
   # def destroy
   #
