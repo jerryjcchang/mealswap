@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if current_user
-      redirect_to user_path(@user)
+      redirect_to meals_path
     else
       render :new
     end
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     username=params[:username]
     @user = User.find_by(username: username)
 
-    if @user && user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       cookies["current_user"] = username
       redirect_to meals_path
     else
