@@ -15,7 +15,7 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.create(strong_params)
-    redirect_to meal_path
+    redirect_to meal_path(@meal)
   end
 
   def edit
@@ -23,7 +23,7 @@ class MealsController < ApplicationController
 
   def update
     @meal.update(strong_params)
-    redirect_to @meal
+    redirect_to meal_path(@meal)
   end
 
   def destroy
@@ -34,7 +34,7 @@ class MealsController < ApplicationController
   private
 
   def strong_params
-    params.require(:meal).permit(:name, :calories, :ingredients, :description, :prep_time, :chef_id)
+    params.require(:meal).permit(:name, :calories, :ingredients, :description, :prep_time, :portion, :chef_id)
   end
 
   def find_meal
