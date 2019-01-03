@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       cookies["current_user"] = @user.username
-      redirect_to @user
+      redirect_to meals_path
     else
       render :new
     end
