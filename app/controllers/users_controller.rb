@@ -9,9 +9,14 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       cookies["current_user"] = @user.username
+      redirect_to @user
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find_by(username: cookies[:current_user])
   end
 
   private

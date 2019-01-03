@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :companies, only: [:index]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :meals, only: [:index]
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

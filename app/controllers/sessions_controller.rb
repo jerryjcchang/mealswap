@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if current_user
-      redirect_to meals_path
+      redirect_to user_path(@user)
     else
       render :new
     end
@@ -24,4 +24,5 @@ class SessionsController < ApplicationController
       cookies.delete("current_user")
       redirect_to login_path
     end
+
 end
