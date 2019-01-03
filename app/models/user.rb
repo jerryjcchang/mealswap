@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :meals, foreign_key: 'chef_id'
   validates :username, uniqueness: true
   validates_format_of :first_name, :with => /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/
+  validates_with EmailAddress::ActiveRecordValidator, field: :email
 
   def full_name
     self.first_name + " " + self.last_name

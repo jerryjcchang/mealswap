@@ -13,8 +13,7 @@
     <div class="header">
       <h1>MealSwap</h1>
       <% if cookies.has_key? "current_user" %>
-      <% @user = User.find_by(username: cookies[:current_user]) %>
-      <h2>Welcome <%= @user.first_name %></h2>
+      <h2>Welcome <%= current_user.first_name %></h2>
       <p class="right"><%= link_to "Log Out", logout_path %></p>
     <% else %>
       <p><%= link_to "Log In", login_path %></p>
