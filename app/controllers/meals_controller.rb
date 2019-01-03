@@ -34,7 +34,7 @@ class MealsController < ApplicationController
   private
 
   def strong_params
-    params.require(:meal).permit(:name, :calories, :ingredients, :description, :prep_time, :chef_id)
+    params.require(:meal).permit(:name, :calories, :ingredients, :description, :prep_time, :chef_id, :portion)
   end
 
   def find_meal
