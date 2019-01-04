@@ -29,8 +29,11 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/meals/new">Create a Meal</a></li>
-          <li><a href="/users">Users</a></li>
+          <% if cookies.has_key? "current_user" %>
           <li><a href="/logout">Logout</a></li>
+          <% else %>
+          <li><a href="/login">Login</a></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -43,7 +46,7 @@
       <h2>Welcome, <%= link_to current_user.first_name, current_user %></h2>
       <%= link_to "Edit Profile", edit_user_path(current_user) %> | <%= link_to "Log Out", logout_path %></p>
     <% else %>
-      <p><%= link_to "Log In", login_path %></p>
+      <h2>Welcome! Please register <%= link_to "here", new_user_path %></p>
       <% end %>
     </div>
 
