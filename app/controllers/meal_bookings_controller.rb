@@ -9,7 +9,7 @@ class MealBookingsController < ApplicationController
       @booking = MealBooking.create(meal_id: params['meal_id'], booker_id: params['booker_id'])
       redirect_to user_path(current_user)
     else
-      flash.notices = 'You Must Have a Meal Listed to Book'
+      flash.notice = 'You Must Have a Meal Listed to Book'
       redirect_to meal_path(params['meal_id'])
     end
   end
