@@ -1,23 +1,37 @@
+
 <%= form_for @meal do |f| %>
   <ul>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :calories %>
-    <%= f.select :calories, (100..2000).step(100) %>
-    <%= f.label :ingredients %>
-    <%= f.text_area :ingredients %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.label :prep_time %>
-    <%= f.text_field :prep_time %>
-    <%= f.label :portion %>
-    <%= f.select :portion, (1..4) %>
+    <div class = "form-group">
+      <%= f.label :name %></br>
+      <%= f.text_field :name %>
+    </div>
+    <div class = "form-group">
+      <%= f.label :calories %>
+      <%= f.select :calories, (100..2000).step(100) %>
+    </div>
+    <div class = "form-group">
+      <%= f.label :ingredients %></br>
+      <%= f.text_area :ingredients %>
+    </div>
+    <div class = "form-group">
+      <%= f.label :description %></br>
+      <%= f.text_area :description %>
+    </div>
+    <div class = "form-group">
+      <%= f.label :prep_time %></br>
+      <%= f.select :prep_time, ['15 min', '30 min', '1 hour', '1.5 hours', '2 hours+'] %>
+    </div>
+    <div class = "form-group">
+      <%= f.label 'Portions' %></br>
+      <%= f.select :portion, (1..4) %>
+    </div>
     <%= f.hidden_field :chef_id, value: current_user.id %>
 
     <div class="field">
-      
+      <%= f.label 'Upload Image' %>
       <%= f.file_field :image %>
     </div>
 
     <%= f.submit submit_text %>
 <% end %>
+</div>
