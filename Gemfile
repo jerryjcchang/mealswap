@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
+gem 'bootstrap', '~> 4.1.3'
+
 gem 'email_address'
 
 # Use ActiveStorage variant
@@ -37,6 +39,7 @@ gem 'email_address'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
