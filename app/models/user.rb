@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def can_book?
-    booked_meals.length >= 0 && booked_meals.length <= 3
+    booked_meals.length >= 0 && booked_meals.length <= 3 && meals.length >= 1
   end
 
 end
