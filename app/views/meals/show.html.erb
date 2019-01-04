@@ -5,9 +5,14 @@
 <h3> Decription: <%= @meal.description %></h3>
 <h3> Preparation Time:<%= @meal.prep_time %></h3>
 
+<%= form_tag meal_bookings_path do %>
+  <%= hidden_field_tag :meal_id, @meal.id %>
+  <%= hidden_field_tag :booker_id, current_user.id %>
+  <%= submit_tag 'Book This Meal'%>
+<%end%>
+
 <%= form_tag @meal, method: "DELETE" do %>
     <%= submit_tag "Delete This Meal" %>
 <% end %>
-
   <%= link_to "Return to Meals Index", meals_path %>
   <%= link_to "Edit this Meal", edit_meal_path %>

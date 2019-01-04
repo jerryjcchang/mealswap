@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    before_action :find_user, only: [:show, :edit, :update]
+
   def index
     @users = User.all
   end
@@ -20,6 +22,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -37,6 +50,10 @@ class UsersController < ApplicationController
       :experience,
       :company_id,
     )
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 
 end

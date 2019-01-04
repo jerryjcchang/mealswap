@@ -16,4 +16,8 @@ class User < ApplicationRecord
     self.company.name
   end
 
+  def booked_meals
+    self.meal_bookings.all
+  end
+
 end
