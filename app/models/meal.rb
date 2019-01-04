@@ -7,4 +7,13 @@ class Meal < ApplicationRecord
 
   has_one_attached :image
 
+  validates :name, presence: true
+  validates :calories, presence: true
+  validates :ingredients, presence: true
+  validates :description, presence: true
+  validates :prep_time, presence: true
+  validates :chef_id, presence: true
+  validates :portion, presence: true
+
+
 end
