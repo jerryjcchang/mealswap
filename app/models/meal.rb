@@ -7,4 +7,16 @@ class Meal < ApplicationRecord
 
   has_one_attached :image
 
+  def chef_id
+    chef.id
+  end
+
+  def chef_username
+    chef.username
+  end
+
+  def avail?
+    portion >= 1
+  end
+
 end

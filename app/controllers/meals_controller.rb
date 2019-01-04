@@ -11,7 +11,11 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new
+    if current_user
+      @meal = Meal.new
+    else
+      redirect_to login_path
+    end
   end
 
   def create

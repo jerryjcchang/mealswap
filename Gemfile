@@ -32,6 +32,8 @@ gem 'mini_magick', '~> 4.3'
 
 gem 'email_address'
 
+gem 'friendly_id'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

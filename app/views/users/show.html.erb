@@ -1,7 +1,7 @@
-<h1><%= @user.username %></h1>
+<h1><%= @user.full_name %></h1>
 
 <div>
-  <p>Name: <%= @user.full_name %></p>
+  <p>Username: <%= @user.username %></p>
   <p>E-mail: <a href="mailto:<%= @user.email %>?subject=MealSwap"><%= @user.email %></a></p>
   <p>Company: <%= @user.company_name %></p>
   <p>Cooking Experience: <%= @user.experience %></p>
@@ -16,5 +16,8 @@
   <h2>Meals Booked</h2>
       <% @user.booked_meals.each do |bm| %>
         <p><%= link_to bm.meal_name, bm.meal %>
+            <%= form_tag bm, method: "DELETE" do %>
+            <%= submit_tag "Cancel Meal" %></p>
+            <%end%>
       <%end%>
 </div>

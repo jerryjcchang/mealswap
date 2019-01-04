@@ -5,9 +5,14 @@ class MealBookingsController < ApplicationController
   end
 
   def create
-    # byebug
-    @booking = MealBooking.create(meal_id: params['meal_id'], booker_id: params['booker_id'])
-    redirect_to user_path(@booking.booker)
+      @booking = MealBooking.create(meal_id: params['meal_id'], booker_id: params['booker_id'])
+      redirect_to user_path(@booking.booker)
+  end
+
+  def destroy
+    @booking = MealBooking.find(params[:id])
+    @booking.destroy
+    redirect_to meals_path
   end
 
   private

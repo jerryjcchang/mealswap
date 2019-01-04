@@ -5,19 +5,28 @@ class User < ApplicationRecord
   has_many :meals, through: :meal_bookings
   has_many :meals, foreign_key: 'chef_id'
   validates :username, uniqueness: true
+  validates :user_name, with: /^[A-Za-z0-9]+$/
   validates_format_of :first_name, :with => /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/
   validates_with EmailAddress::ActiveRecordValidator, field: :email
 
+  def to_param
+    [username.parameterize].join("-")
+  end
+
   def full_name
-    self.first_name + " " + self.last_name
+    first_name + " " + last_name
   end
 
   def company_name
-    self.company.name
+    company.name
   end
 
   def booked_meals
-    self.meal_bookings.all
+    meal_bookings.all
+  end
+
+  def can_book?
+    booked_meals.length >= 0 && booked_meals.length <= 3
   end
 
 end

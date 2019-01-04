@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2019_01_03_234151) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "portion"
-    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
