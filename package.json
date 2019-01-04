@@ -1,5 +1,8 @@
 {
   "name": "mealswap",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "normalize.css": "^8.0.1"
+  }
 }

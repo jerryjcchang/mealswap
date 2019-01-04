@@ -8,9 +8,7 @@
 
 <% if @meal.image.attached? %>
 <!-- @meal.image.present? will always return true, use attached? to check presence -->
-  <p>
-    <%= image_tag @meal.image %>
-  </p>
+  <p><%= image_tag @meal.image %></p>
 <% end %>
 
 

@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  layout 'application'
+
   helper_method :current_user
 
   def current_user
