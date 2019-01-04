@@ -1,4 +1,8 @@
 
-
-
-  <%= link_to "Submit a New Meal!", new_meal_path %>
+<div class="meal_index">
+        <% Meal.all.each do |meal| %>
+        <div class="meal_photo"><%= image_tag meal.image, :size=>"200x200" %><br>
+         <span><%= link_to meal.name + " by " + meal.chef.first_name, meal %></span></div>
+        <% end %>
+</div>
+<h1>     </h1>

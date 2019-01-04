@@ -1,9 +1,9 @@
-<h1>Meal Name: <%= @meal.name %></h1>
-<h2>Chef: <%= @meal.chef.username %></h2>
-<h3> Calories: <%= @meal.calories %></h3>
-<h3> Ingredients: <%= @meal.ingredients %></h3>
-<h3> Decription: <%= @meal.description %></h3>
-<h3> Preparation Time: <%= @meal.prep_time %></h3>
+<h2>Meal Name: <%= @meal.name %></h2>
+<h2>Chef: <%= link_to @meal.chef.username, @meal.chef %></h2>
+<p> Calories: <%= @meal.calories %></p>
+<p> Ingredients: <%= @meal.ingredients %></p>
+<p> Decription: <%= @meal.description %></p>
+<p> Preparation Time: <%= @meal.prep_time %></p>
 
 
 <% if @meal.image.attached? %>
