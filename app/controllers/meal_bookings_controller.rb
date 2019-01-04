@@ -12,7 +12,7 @@ class MealBookingsController < ApplicationController
   def destroy
     @booking = MealBooking.find(params[:id])
     @booking.destroy
-    redirect_to meals_path
+    redirect_to user_path(@booking.booker)
   end
 
   private
