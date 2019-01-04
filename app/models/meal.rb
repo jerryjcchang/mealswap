@@ -4,4 +4,7 @@ class Meal < ApplicationRecord
   belongs_to :chef, class_name: 'User', foreign_key: 'chef_id'
   has_many :meal_restrictions
   has_many :dietary_restrictions, through: :meal_restrictions
+
+  has_one_attached :image
+
 end

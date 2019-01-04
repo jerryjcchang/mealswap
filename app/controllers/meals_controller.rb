@@ -15,7 +15,6 @@ class MealsController < ApplicationController
   end
 
   def create
-    byebug
     @meal = Meal.create(strong_params)
     redirect_to meal_path(@meal)
   end
@@ -36,7 +35,7 @@ class MealsController < ApplicationController
   private
 
   def strong_params
-    params.require(:meal).permit(:name, :calories, :ingredients, :description, :prep_time, :portion, :chef_id)
+    params.require(:meal).permit(:name, :calories, :ingredients, :description, :prep_time, :portion, :chef_id, :image)
   end
 
   def find_meal
