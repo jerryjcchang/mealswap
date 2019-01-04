@@ -8,17 +8,18 @@
 
 <div>
   <h2>Meals Prepared</h2>
+  <div class="meal_index">
       <% @user.meals.each do |m| %>
-        <p><%= link_to m.name, m %></p>
+        <div class="meal_photo"><%= image_tag m.image, :size=>"200x200" %><br>
+        <span><%= link_to m.name, m %></span></div>
       <%end%>
 </div>
 <div>
   <h2>Meals Booked</h2>
+  <div class="meal_index">
       <% @user.booked_meals.each do |bm| %>
-        <p><%= link_to bm.meal_name, bm.meal %>
-            <%= form_tag bm, method: "DELETE" do %>
-            <%= submit_tag "Cancel Meal" %></p>
-            <%end%>
+        <div class="meal_photo"><%= image_tag bm.meal.image, :size=>"200x200" %><br>
+        <%= link_to bm.meal_name, bm.meal %></div>
       <%end%>
 </div>
 <p><%= link_to 'Return to Meals', meals_path %></p>
