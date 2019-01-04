@@ -20,7 +20,11 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.create(strong_params)
-    redirect_to meal_path(@meal)
+    if @meal.errors
+     render :new
+   else
+     redirect_to meal_path(@meal)
+   end
   end
 
   def edit

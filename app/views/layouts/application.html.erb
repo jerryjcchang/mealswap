@@ -5,13 +5,40 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="header">
-      <h1>MealSwap</h1>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/meals">MealSwap</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/meals/new">Create a Meal</a></li>
+          <li><a href="/users">Users</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="jumbotron">
+    <div class="container">
       <% if cookies.has_key? "current_user" %>
       <h2>Welcome <%= link_to current_user.first_name, current_user %></h2>
       <%= link_to "Edit Profile", edit_user_path(current_user) %> | <%= link_to "Log Out", logout_path %></p>
@@ -19,6 +46,46 @@
       <p><%= link_to "Log In", login_path %></p>
       <% end %>
     </div>
-    <%= yield %>
+
+  </div>
+
+
+
+  <div class="container-fluid bg-3 text-center">
+    <div class="row">
+      <ul>
+        <div class="col-sm-3">
+          <ul>
+            <% Meal.all.each do |meal| %>
+             <%= image_tag meal.image, :size => "260x180", :class=>"img-responsive", :style=>"width:100%", :alt=>"Image", :crop => :fill%> <br>
+             <%= link_to meal.name + " by " + meal.chef.first_name, meal %><br>
+            <% end %>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <%= yield %>
+
+
+
+<footer class="text-center">
+  <a class="up-arrow" href="/login" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>MealSwap <%= Date.current %></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+
+
+
+
   </body>
 </html>
