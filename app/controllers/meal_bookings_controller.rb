@@ -15,6 +15,7 @@ class MealBookingsController < ApplicationController
   end
 
   def destroy
+#may want to add a check to make sure the user is the owner of the meal
     @booking = MealBooking.find(params[:id])
     @booking.destroy
     redirect_to user_path(@booking.booker)

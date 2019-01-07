@@ -19,6 +19,7 @@ class MealsController < ApplicationController
   end
 
   def create
+    #as a coder, I prefer the new, valid?, save pattern (that's just preference)
     @meal = Meal.create(strong_params)
     if @meal.errors
      render :new
@@ -36,6 +37,7 @@ class MealsController < ApplicationController
   end
 
   def destroy
+#check for permission? what if destroy fails?
     @meal.destroy
     redirect_to meals_path
   end

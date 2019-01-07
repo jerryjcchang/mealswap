@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   end
 
   def create
+#code consistancy: this patern is different then creating a meal may want to
+#decide on a patern to use
     @user = User.new(user_params)
     if @user.valid?
       @user.save
@@ -37,7 +39,8 @@ class UsersController < ApplicationController
   end
 
   private
-
+#code consistancy: If you're going to have this kind of formating for strong paramas
+#you  want to do this in all of your strong params
   def user_params
     params.require(:user).permit(
       :username,

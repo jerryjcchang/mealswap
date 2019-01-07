@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  #code consistancy see meal.rb
   has_secure_password
   belongs_to :company
   has_many :meal_bookings, foreign_key: 'booker_id'
