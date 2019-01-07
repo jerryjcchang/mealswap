@@ -6,6 +6,7 @@ class MealBookingsController < ApplicationController
 
   def create
     if current_user.can_book?
+      # could utilize strong_params
       @booking = MealBooking.create(meal_id: params['meal_id'], booker_id: params['booker_id'])
       redirect_to user_path(current_user)
     else

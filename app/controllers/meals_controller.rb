@@ -20,6 +20,9 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.create(strong_params)
+    # the use of @meal.errors below is erroneous
+    # likely want to use @meal.erros.any? or its opposite,
+    # @meal.erros will always return a truthy value when coerced
     if @meal.errors
      render :new
    else
