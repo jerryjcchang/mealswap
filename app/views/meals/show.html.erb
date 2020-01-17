@@ -1,3 +1,4 @@
+<div class="meal-page">
 <h2>Meal Name: <%= @meal.name %></h2>
 <h2>Chef: <%= link_to @meal.chef.username, @meal.chef %></h2>
 <p> Calories: <%= @meal.calories %></p>
@@ -8,7 +9,7 @@
 
 <% if @meal.image.attached? %>
 <!-- @meal.image.present? will always return true, use attached? to check presence -->
-  <p><%= image_tag @meal.image %></p>
+  <%= image_tag @meal.image, class:"meal-img" %>
 <% end %>
 
 <% if !current_user.nil? %>
@@ -23,11 +24,13 @@
 <% end %>
 
 
-
+<br>
   <%= link_to "Return to Meals Index", meals_path %>
   <% if !current_user.nil? && current_user.id == @meal.chef_id %>
+      |
       <%= link_to "Edit this Meal", edit_meal_path %>
       <%= form_tag @meal, method: "DELETE" do %>
       <%= submit_tag "Delete This Meal" %>
       <% end %>
   <% end %>
+</div>

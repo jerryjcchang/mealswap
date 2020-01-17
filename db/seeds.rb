@@ -17,4 +17,7 @@ Company.find_or_create_by(name: "Venture Labs Georgetown", floor: "8F")
 # Meal.find_or_create_by(name: "Hot BBQ Chicken", calories: 450, ingredients: "Chicken, BBQ", description: "Slow cooked chicken covered in a spicy and sweet BBQ sauce", prep_time: "3 hrs", chef_id: 2)
 # Meal.find_or_create_by(name: "Braised Beef Polenta", calories: 800, ingredients: "Beef, Tomatos, Red Wine, Polenta, Butter, Herbs", description: "Beef braised in a red wine tomato sauce for 8 hours, served on a bed of rich and buttery polenta", prep_time: "8+ hrs", chef_id: 2)
 
-User.find_or_create_by(username: 'username', password: 'password', first_name: 'first', last_name: 'last', experience: '5', company_id: 1, email: 'jerryjcchang@gmail.com' )
+User.create(username: 'jerryjcchang', password: 'password', first_name: 'JC', last_name: 'Chang', experience: '5', company_id: 1, email: 'jerryjcchang@gmail.com' )
+User.create(username: 'tjameson', password: 'trevor', first_name: 'Trevor', last_name: 'Jameson', experience: '4', company_id: 1, email: 'trevor.jameson@flatironschool.com')
+User.create(username: 'crosswordlovr', password: 'shannon', first_name: 'Shannon', last_name: 'Nabors', experience: '4', company_id: 1, email: 'shannon.nabors@flatironschool.com')
+User.create(username: 'iluvstarwars', password: 'chine', first_name: 'Chine', last_name: 'Anikwe', experience: '4', company_id: 1, email: 'chine.anikwe@flatironschool.com')
