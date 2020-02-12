@@ -19,6 +19,7 @@
    font-size: small;
    font-color: #000;
    background-color: #fff;
+   height: 100vh;
 }
 
 a:link, a:active, a:visited {
@@ -97,15 +98,21 @@ footer {
 
 .meal_index {
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2rem;
+  margin: auto;
+  padding: 0px 50px;
 }
 
-.meal_photo {
+.meal-card {
   display: inline-block;
-  width: 30%;
+  width: 100%;
 }
 
 .meal-img {
-  width: 75%;
+  width: 40%;
+  margin-bottom: 2vh;
 }
 
 footer a {
@@ -123,4 +130,9 @@ footer a:hover {
 
 .container {
   margin-left: 0;
+}
+
+.warning-div {
+  color: #CD0000;
+  font-style: italic;
 }

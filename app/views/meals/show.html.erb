@@ -12,14 +12,14 @@
   <%= image_tag @meal.image, class:"meal-img" %>
 <% end %>
 
-<% if !current_user.nil? %>
+<% if !current_user.nil?%>
 <% if flash.notice %>
-    <h3><%= flash.notice %></h3>
+    <h3 class="warning-div"><%= flash.notice %></h3>
 <% end %>
   <%= form_tag meal_bookings_path do %>
     <%= hidden_field_tag :meal_id, @meal.id %>
     <%= hidden_field_tag :booker_id, current_user.id %>
-    <%= submit_tag 'Book This Meal'%>
+    <%= submit_tag 'Book This Meal', class: 'btn btn-danger btn-lg'%>
   <%end%>
 <% end %>
 

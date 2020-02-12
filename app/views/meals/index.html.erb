@@ -1,7 +1,7 @@
 
 <div class="meal_index">
         <% Meal.all.each do |meal| %>
-        <div class="meal_photo"><%= image_tag meal.image, :size=>"200x200" %><br>
+        <div class="meal-card"><%= link_to image_tag(meal.image, :size=>"275x275"), { action: 'show', controller: 'meals', id: meal.id } %><br>
          <span><%= link_to meal.name + " by " + meal.chef.first_name, meal %></span></div>
         <% end %>
 </div>

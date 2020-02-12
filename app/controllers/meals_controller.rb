@@ -20,7 +20,8 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.create(strong_params)
-    if @meal.errors
+    if !@meal.errors.empty?
+      byebug
      render :new
    else
      redirect_to meal_path(@meal)
