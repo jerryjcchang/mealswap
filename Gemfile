@@ -27,7 +27,7 @@ gem 'turbolinks', '~> 5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave', '~> 1.3.2'
 gem 'mini_magick', '~> 4.3'
 
 gem 'bootstrap', '~> 4.1.3'
