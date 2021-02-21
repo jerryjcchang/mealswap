@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'email_address'
 
